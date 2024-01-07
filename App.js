@@ -157,7 +157,6 @@ export default function App() {
                 console.log(filteredAtividades)
             setAtividadesList(filteredAtividades.reverse());
             setLoading(false);
-            setDataFormatada(moment(dataOriginal).format('DD/MM/YYYY HH:mm:ss'))
         } catch (error) {
             console.error('Erro ao buscar atividades:', error);
             setLoading(false);
