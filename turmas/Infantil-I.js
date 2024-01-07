@@ -5,7 +5,7 @@ import axios from 'axios';
 import API from './api';
 import { useEffect } from 'react';
 import apiAxios from './api';
-import { MdDateRange } from 'react-icons/md';
+// import { MdDateRange } from 'react-icons/md';
 
 export default function App() {
 
@@ -174,7 +174,7 @@ export default function App() {
                                                 key={atividadeItem.id}
                                             >
                                                 <div className="atv-agenda-item-datas-data" style={{ textAlign: "center" }}>
-                                                    <MdDateRange /> {format(new Date(atividadeItem.date), 'dd/MM/yyyy, eeee', { locale: pt })}
+                                                    {/* <MdDateRange /> {format(new Date(atividadeItem.date), 'dd/MM/yyyy, eeee', { locale: pt })} */}
                                                 </div>
                                                 <div className="atv-agenda-item-datas-content">
                                                     <div>

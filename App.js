@@ -6,10 +6,13 @@ import API from './api';
 import { useEffect } from 'react';
 import apiAxios from './api';
 import { MdDateRange } from 'react-icons/md';
+import moment from 'moment';
 
 export default function App() {
 
   const [loading, setLoading] = useState(true);
+
+  const [dataFormatada, setDataFormatada] = useState('');
 
   const [atividadesList, setAtividadesList] = useState([]);
 
@@ -141,8 +144,8 @@ export default function App() {
         },
     },
   });
-  
 
+  
   useEffect(() => {
     const fetchAtividades = async () => {
         try {
@@ -154,6 +157,7 @@ export default function App() {
                 console.log(filteredAtividades)
             setAtividadesList(filteredAtividades.reverse());
             setLoading(false);
+            setDataFormatada(moment(dataOriginal).format('DD/MM/YYYY HH:mm:ss'))
         } catch (error) {
             console.error('Erro ao buscar atividades:', error);
             setLoading(false);
@@ -161,6 +165,7 @@ export default function App() {
     };
     fetchAtividades();
 }, []);
+
 
 
   return (
@@ -174,7 +179,7 @@ export default function App() {
                                                 key={atividadeItem._id}
                                             >
                                                 <div className="atv-agenda-item-datas-data" style={{ textAlign: "center" }}>
-                                                    <MdDateRange /> {format(new Date(atividadeItem.date), 'dd/MM/yyyy, eeee', { locale: pt })}
+                                                    <MdDateRange /> {moment(atividadeItem.date).format('DD/MM/YYYY HH:mm:ss')}
                                                 </div>
                                                 <div className="atv-agenda-item-datas-content">
                                                     <div>
