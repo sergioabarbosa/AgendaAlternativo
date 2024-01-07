@@ -164,14 +164,14 @@ export default function App() {
 
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Testando APP</Text>
       <div className="atv-agenda-item-all">
                                     {atividadesList
                                         .map((atividadeItem) => (
                                             <div
                                                 className="atv-agenda-item-datas"
-                                                key={atividadeItem._id}
+                                                key={atividadeItem.id}
                                             >
                                                 <div className="atv-agenda-item-datas-data" style={{ textAlign: "center" }}>
                                                     <MdDateRange /> {format(new Date(atividadeItem.date), 'dd/MM/yyyy, eeee', { locale: pt })}
@@ -207,10 +207,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
