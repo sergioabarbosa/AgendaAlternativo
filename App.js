@@ -16,135 +16,6 @@ export default function App() {
 
   const [atividadesList, setAtividadesList] = useState([]);
 
-//   const [atividadeList, setAtividade] = useState({
-//     atividadeSerie: 'Infantil I',
-//     agendastatus: false,
-//     acolhida: '',
-//     materias: {
-//         portugues: {
-//             isSelect: false,
-//             materia: 'Português',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         matematica: {
-//             isSelect: false,
-//             materia: 'Matemática',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         ensinoReligioso: {
-//             isSelect: false,
-//             materia: 'Ensino Religioso',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         historia: {
-//             isSelect: false,
-//             materia: 'História',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         geografia: {
-//             isSelect: false,
-//             materia: 'Geografia',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         ciencias: {
-//             isSelect: false,
-//             materia: 'Ciências',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         ingles: {
-//             isSelect: false,
-//             materia: 'Inglês',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         musica: {
-//             isSelect: false,
-//             materia: 'Música',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         Linguagem: {
-//             isSelect: false,
-//             materia: 'Linguagem',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         sociedade: {
-//             isSelect: false,
-//             materia: 'Sociedade',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//         natureza: {
-//             isSelect: false,
-//             materia: 'Natureza',
-//             objetivoConhecimento: '',
-//             habilidades: '',
-//             metodologia: '',
-//             atividadeMaterial: '',
-//             links: '',
-//             atividadeMaterialCasa:  '',
-//             linksCasa: '',
-//         },
-//     },
-//   });
-
   
   useEffect(() => {
     const fetchAtividades = async () => {
@@ -168,60 +39,72 @@ export default function App() {
 
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Testando APP</Text>
-      <div className="atv-agenda-item-all">
-                                    {atividadesList
-                                        .map((atividadeItem) => (
-                                            <div
-                                                className="atv-agenda-item-datas"
-                                                key={atividadeItem._id}
-                                            >
-                                                <div className="atv-agenda-item-datas-data" style={{ textAlign: "left" }}>
-                                                    <MdDateRange /> {moment(atividadeItem.date).format('DD/MM/YYYY HH:mm:ss')}
-                                                </div>
-                                                <div className="atv-agenda-item-datas-status">
-                                                    <strong>Status:</strong> {atividadeItem.agendastatus ? 'Atividade agendada' : 'Atividade não agendada'}
-                                                </div>
-                                                <div className='id'
-                                                    style={{ textAlign: "left" }}>
-                                                    <strong>ID da postagem:</strong> {atividadeItem._id}
-                                                </div>
-                                                <div className="atv-agenda-item-datas-content">
-                                                    <div>
-                                                        <strong>Série:</strong> {atividadeItem.atividadeSerie}
-                                                    </div>
-                                                    <div>
-                                                        <strong>Matérias do dia:</strong>
-                                                        <ul>
-                                                            {Object.entries(atividadeItem.materias).map(([materiaKey, materia]) => (
-                                                                materia.isSelect && (
-                                                                    <div key={materiaKey}>
-                                                                        {materia.materia}
-                                                                        {materia.atividadeMaterial && (
-                                                                            <li>
-                                                                                <strong>Atividade:</strong> {materia.atividadeMaterial}
-                                                                            </li>
-                                                                        )}
-                                                                    </div>
-                                                                )
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                </div>
+      <View style={styles.atividadeList}>
+        {atividadesList.map((atividadeItem) => (
+          <View style={styles.atvAgendaItem} key={atividadeItem._id}>
+            <View style={styles.atvAgendaItemData}>
+              {/* Aqui você pode adicionar o ícone MdDateRange */}
+              <Text>{moment(atividadeItem.date).format('DD/MM/YYYY HH:mm:ss')}</Text>
+            </View>
+            <View style={styles.atvAgendaItemStatus}>
+              <Text>
+                Status: {atividadeItem.agendastatus ? 'Atividade agendada' : 'Atividade não agendada'}
+              </Text>
+            </View>
+            <View style={styles.id}>
+              <Text>ID da postagem: {atividadeItem._id}</Text>
+            </View>
+            <View style={styles.atvAgendaItemContent}>
+              <Text>Série: {atividadeItem.atividadeSerie}</Text>
+              <Text>Matérias do dia:</Text>
+              {Object.entries(atividadeItem.materias).map(([materiaKey, materia]) => (
+                materia.isSelect && (
+                  <View key={materiaKey}>
+                    <Text>{materia.materia}</Text>
+                    {materia.atividadeMaterial && (
+                      <Text>Atividade: {materia.atividadeMaterial}</Text>
+                    )}
+                  </View>
+                )
+              ))}
+            </View>
+          </View>
+        ))}
+      </View>
       <StatusBar style="auto" />
     </View>
   );
 }
 
+
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  atividadeList: {
+    marginVertical: 10,
+  },
+  atvAgendaItem: {
+    borderWidth: 1,
+    borderColor: 'black',
+    padding: 10,
+    marginVertical: 5,
+  },
+  atvAgendaItemData: {
+    textAlign: 'left',
+  },
+  atvAgendaItemStatus: {
+    textAlign: 'left',
+  },
+  id: {
+    textAlign: 'left',
+  },
+  atvAgendaItemContent: {
+    textAlign: 'left',
+  },
 });
