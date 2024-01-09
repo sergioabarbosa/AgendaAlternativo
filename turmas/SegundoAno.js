@@ -71,7 +71,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -80,9 +80,17 @@ const styles = StyleSheet.create({
   },
   atvAgendaItem: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: '#FF0000', // Vermelho
     padding: 10,
-    marginVertical: 5,
+    marginVertical: 10,
+    shadowColor: '#FF0000', // Sombra vermelha
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 5,
   },
   atvAgendaItemData: {
     textAlign: 'left',
@@ -100,7 +108,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#FFFFFF',
   },
   loadingContainer: {
     flex: 1,
