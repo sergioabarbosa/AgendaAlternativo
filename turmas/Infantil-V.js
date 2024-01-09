@@ -22,7 +22,7 @@ export default function App() {
         try {
             const response = await apiAxios.get('/api/agendaOnline/agenda');
             const filteredAtividades = response.data.filter(
-                (atividade) => atividade.atividadeSerie === 'Infantil I'
+                (atividade) => atividade.atividadeSerie === 'Infantil V'
                 );
                 console.log(response.data)
                 console.log(filteredAtividades)
