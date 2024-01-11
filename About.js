@@ -19,11 +19,12 @@ export default function About() {
           visualizar e confirmar o recebimento das atividades.
         </Text>
         <Text style={styles.aboutText}>
-          O aplicativo foi desenvolvido por alunos pela equipe de Engenaria do colégio Alternativo Colaço.
+          Versão do APP: 1.0.0
         </Text>
         <Text style={styles.aboutText}>
           Desenvolvido por: Sérgio Alves Barbosa. Analista de Sistemas e Programador.
-          Para suporte e contato poor Whatsapp: (85)999924744
+          Cilas Miguel Colaço Bezerra, estudante de Análise e Desenvolvimento de Sistemas.
+          Para suporte e contato por Whatsapp: (85)999924744
         </Text>
       </View>
       {/* add a copirygth */}
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#3498db',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10,
   },
   header: {
     alignItems: 'center',
@@ -46,6 +48,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 150,
     height: 150,
+    marginTop: 30,
   },
   title: {
     fontSize: 30,
@@ -61,7 +64,10 @@ const styles = StyleSheet.create({
   aboutText: {
     fontSize: 16,
     marginBottom: 20,
+    padding: 5,
     justifyContent: 'center',
     textAlign: 'justify',
+    marginTop: 1, // Adicionando marginTop para afastar o texto da parte inferior
+    marginBottom: -10, // Adicionando marginBottom para afastar o texto da parte inferior
   },
 });

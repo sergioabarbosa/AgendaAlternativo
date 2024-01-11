@@ -20,7 +20,7 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Agenda Escolar' }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
         <Stack.Screen name="Infantil I" component={InfantilI} />
         <Stack.Screen name="Infantil II" component={InfantilII} />
         <Stack.Screen name="Infantil III" component={InfantilIII} />
