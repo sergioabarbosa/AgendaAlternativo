@@ -13,6 +13,10 @@ export default function App() {
         <Text style={styles.title}>Agenda Escolar</Text>
       </View>
       <Navigation />
+      {/* add a copirygth */}
+      <Text style={{ textAlign: 'center', marginBottom: 20 }}>
+        &copy;2024 - Colégio Alternativo Colaço.
+      </Text>
     </View>
   );
 }
@@ -40,4 +44,5 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
   },
+
 });
