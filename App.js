@@ -15,7 +15,7 @@ export default function App() {
       <Navigation />
       {/* add a copirygth */}
       <Text style={{ textAlign: 'center', marginBottom: 20 }}>
-        &copy;2024 - Colégio Alternativo Colaço.
+        &copy;2024 - COLÉGIO ALTERNATIVO COLAÇO.
       </Text>
     </View>
   );
