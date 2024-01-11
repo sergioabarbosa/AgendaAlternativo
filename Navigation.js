@@ -1,7 +1,7 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { StyleSheet, ScrollView, View, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
 import InfantilI from './turmas/Infantil-I';
 import InfantilII from './turmas/Infantil-II';
 import InfantilIII from './turmas/Infantil-III';
@@ -12,6 +12,7 @@ import SegundoAno from './turmas/SegundoAno';
 import TerceiroAno from './turmas/TerceiroAno';
 import QuartoAno from './turmas/QuartoAno';
 import QuintoAno from './turmas/QuintoAno';
+import About from './About';
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,7 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Agenda Escolar' }} />
         <Stack.Screen name="Infantil I" component={InfantilI} />
         <Stack.Screen name="Infantil II" component={InfantilII} />
         <Stack.Screen name="Infantil III" component={InfantilIII} />
@@ -30,6 +31,7 @@ export default function Navigation() {
         <Stack.Screen name="3º Ano" component={TerceiroAno} />
         <Stack.Screen name="4º Ano" component={QuartoAno} />
         <Stack.Screen name="5º Ano" component={QuintoAno} />
+        <Stack.Screen name="Sobre" component={About} />
         {/* Adicione outras telas aqui */}
       </Stack.Navigator>
     </NavigationContainer>
@@ -39,6 +41,10 @@ export default function Navigation() {
 function HomeScreen({ navigation }) {
   const handleNavigate = (turma) => {
     navigation.navigate(turma);
+  };
+
+  const handleNavigateToAbout = () => {
+    navigation.navigate('Sobre');
   };
 
   return (
@@ -53,6 +59,12 @@ function HomeScreen({ navigation }) {
           <Text style={styles.buttonText}>{turma}</Text>
         </TouchableOpacity>
       ))}
+      <TouchableOpacity
+        style={styles.button}
+        onPress={handleNavigateToAbout}
+      >
+        <Text style={styles.buttonText}>Sobre</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 }
@@ -62,7 +74,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#f0f0f0',// cor de fundo
   },
   button: {
     backgroundColor: '#EB3337',
