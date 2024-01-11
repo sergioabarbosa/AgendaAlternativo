@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, ScrollView, ActivityIndicator } from 'react-nat
 import apiAxios from '../api';
 import moment from 'moment';
 
-export default function App() {
+export default function InfantilV() {
   const [loading, setLoading] = useState(true);
   const [atividadesList, setAtividadesList] = useState([]);
 
@@ -31,7 +31,7 @@ export default function App() {
         </View>
       ) : (
         <View style={styles.container}>
-          <Text>Testando APP</Text>
+          {/* <Text>Testando APP</Text> */}
           <View style={styles.atividadeList}>
             {atividadesList.map((atividadeItem) => (
               <View style={styles.atvAgendaItem} key={atividadeItem._id}>

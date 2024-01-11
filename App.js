@@ -7,7 +7,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('./assets/icon.png')}
+          source={require('./assets/images/NOVA-LOGO.png')}
           style={styles.logo}
         />
         <Text style={styles.title}>Agenda Escolar</Text>
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   logo: {
-    width: 40, // Ajuste o tamanho conforme necessário
-    height: 40, // Ajuste o tamanho conforme necessário
+    width: 50, // Ajuste o tamanho conforme necessário
+    height: 50, // Ajuste o tamanho conforme necessário
     marginRight: 10,
   },
   title: {

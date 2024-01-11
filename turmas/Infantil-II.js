@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, ScrollView, ActivityIndicator } from 'react-nat
 import apiAxios from '../api';
 import moment from 'moment';
 
-export default function App() {
+export default function InfantilII() {
   const [loading, setLoading] = useState(true);
   const [atividadesList, setAtividadesList] = useState([]);
 
