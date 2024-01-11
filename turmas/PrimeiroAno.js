@@ -12,7 +12,8 @@ export default function PrimeiroAno() {
     const fetchAtividades = async () => {
       try {
         const response = await apiAxios.get('/api/agendaOnline/agenda');
-        const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === 'Primeiro Ano');
+        const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === 'Primeiro Ano' 
+         && atividade.agendastatus === false);
         setAtividadesList(filteredAtividades.reverse());
         setLoading(false);
       } catch (error) {

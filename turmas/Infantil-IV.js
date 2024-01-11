@@ -12,7 +12,8 @@ export default function InfantilIV() {
     const fetchAtividades = async () => {
       try {
         const response = await apiAxios.get('/api/agendaOnline/agenda');
-        const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === 'Infantil IV');
+        const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === 'Infantil IV' 
+         && atividade.agendastatus === false);
         setAtividadesList(filteredAtividades.reverse());
         setLoading(false);
       } catch (error) {

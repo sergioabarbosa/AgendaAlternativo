@@ -12,7 +12,8 @@ export default function QuintoAno() {
     const fetchAtividades = async () => {
       try {
         const response = await apiAxios.get('/api/agendaOnline/agenda');
-        const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === 'Quinto Ano');
+        const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === 'Quinto Ano' 
+         && atividade.agendastatus === false);
         setAtividadesList(filteredAtividades.reverse());
         setLoading(false);
       } catch (error) {
