@@ -14,7 +14,7 @@ export default function App() {
       </View>
       <Navigation />
       {/* add a copirygth */}
-      <Text style={{ textAlign: 'center', marginBottom: 20 }}>
+      <Text style={ styles.copy }>
         &copy;2024 - COLÉGIO ALTERNATIVO COLAÇO.
       </Text>
     </View>
@@ -43,6 +43,13 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     fontSize: 20,
     textAlign: 'center',
+  },
+  copy: {
+    fontSize: 10,
+    textAlign: 'center',
+    color: '#888',
+    marginTop: 10,
+    marginBottom: 20,
   },
 
 });

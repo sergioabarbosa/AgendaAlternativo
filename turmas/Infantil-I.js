@@ -84,6 +84,8 @@ const styles = StyleSheet.create({
     borderColor: '#FF0000', // Vermelho
     padding: 10,
     marginVertical: 10,
+    width: '90%',
+    backgroundColor: '#FFFFFF', // Adicionado backgroundColor
     shadowColor: '#FF0000', // Sombra vermelha
     shadowOffset: {
       width: 0,
