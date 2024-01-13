@@ -13,6 +13,7 @@ import TerceiroAno from './turmas/TerceiroAno';
 import QuartoAno from './turmas/QuartoAno';
 import QuintoAno from './turmas/QuintoAno';
 import About from './About';
+import PrivacyPolicy from './PrivacyPolicy';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,7 @@ export default function Navigation() {
         <Stack.Screen name="4º Ano" component={QuartoAno} />
         <Stack.Screen name="5º Ano" component={QuintoAno} />
         <Stack.Screen name="Sobre" component={About} />
+        <Stack.Screen name="Política de Privacidade" component={PrivacyPolicy} />
         {/* Adicione outras telas aqui */}
       </Stack.Navigator>
     </NavigationContainer>
@@ -46,6 +48,10 @@ function HomeScreen({ navigation }) {
   const handleNavigateToAbout = () => {
     navigation.navigate('Sobre');
   };
+
+  const PrivacyPolicyStack = () => (
+  navigation.navigate('Política de Privacidade')
+);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -65,6 +71,12 @@ function HomeScreen({ navigation }) {
       >
         <Text style={styles.buttonText}>Sobre</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+          style={styles.button}
+          onPress={PrivacyPolicyStack} // Estava faltando as chaves aqui
+        >
+          <Text style={styles.buttonText}>Política de Privacidade</Text>
+        </TouchableOpacity>
     </ScrollView>
   );
 }
