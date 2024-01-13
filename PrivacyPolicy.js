@@ -44,6 +44,8 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#fff',
     alignContent: 'center',
+    textAlign: 'justify',  // Adicionado para justificar o texto
+    
   },
   header: {
     fontSize: 24,
