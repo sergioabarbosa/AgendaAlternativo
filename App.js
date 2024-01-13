@@ -10,7 +10,7 @@ export default function App() {
           source={require('./assets/images/NOVA-LOGO.png')}
           style={styles.logo}
         />
-        <Text style={styles.title}>Agenda Escolar </Text>
+        <Text style={styles.title}>Agenda</Text>
       </View>
       <Navigation />
       {/* add a copirygth */}
@@ -40,9 +40,10 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   title: {
-    paddingLeft: 30,
-    fontSize: 20,
+    paddingLeft: 60,
+    fontSize: 30,
     textAlign: 'center',
+    fontWeight: 'bold',
   },
   copy: {
     fontSize: 10,
