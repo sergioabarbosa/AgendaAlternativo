@@ -13,7 +13,7 @@ export default function InfantilI() {
       try {
         const response = await apiAxios.get('/api/agendaOnline/agenda');
         const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === 'Infantil I'
-         && atividade.agendastatus === true);
+         && atividade.agendastatus === false);
         setAtividadesList(filteredAtividades.reverse());
         setLoading(false);
       } catch (error) {
