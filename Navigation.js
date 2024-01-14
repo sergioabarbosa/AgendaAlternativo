@@ -14,6 +14,7 @@ import QuartoAno from './turmas/QuartoAno';
 import QuintoAno from './turmas/QuintoAno';
 import About from './About';
 import PrivacyPolicy from './PrivacyPolicy';
+import Login from './Login';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export default function Navigation() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
+        <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
         <Stack.Screen name="Infantil I" component={InfantilI} />
         <Stack.Screen name="Infantil II" component={InfantilII} />
         <Stack.Screen name="Infantil III" component={InfantilIII} />
@@ -48,6 +50,10 @@ function HomeScreen({ navigation }) {
   const handleNavigateToAbout = () => {
     navigation.navigate('Sobre');
   };
+
+  const handleLogin = () => {
+    navigation.navigate('Login');
+  }
 
   const PrivacyPolicyStack = () => (
   navigation.navigate('Política de Privacidade')

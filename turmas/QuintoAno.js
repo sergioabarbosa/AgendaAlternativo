@@ -12,7 +12,7 @@ export default function QuintoAno() {
     const fetchAtividades = async () => {
       try {
         const response = await apiAxios.get('/api/agendaOnline/agenda');
-        const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === 'Quinto Ano' 
+        const filteredAtividades = response.data.filter((atividade) => atividade.atividadeSerie === '5ano' 
          && atividade.agendastatus === false);
         setAtividadesList(filteredAtividades.reverse());
         setLoading(false);
@@ -32,7 +32,7 @@ export default function QuintoAno() {
         </View>
       ) : (
         <View style={styles.container}>
-          <Text>Testando APP</Text>
+          {/* <Text>Testando APP</Text> */}
           <View style={styles.atividadeList}>
             {atividadesList.map((atividadeItem) => (
               <View style={styles.atvAgendaItem} key={atividadeItem._id}>
