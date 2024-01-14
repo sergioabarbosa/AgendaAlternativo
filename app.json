@@ -7,9 +7,9 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/NOVA-LOGO.png",
+      "image": "./assets/images/nova_logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#eb3337"
     },
     "assetBundlePatterns": [
       "**/*"

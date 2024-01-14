@@ -6,7 +6,7 @@ export default function About() {
   <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('./assets/images/NOVA-LOGO.png')}
+          source={require('./assets/images/nova_logo.png')}
           style={styles.logo}
         />
         <Text style={styles.title}>Agenda Escolar </Text>
